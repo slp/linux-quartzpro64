@@ -99,11 +99,11 @@ def run_gcc():
         env = os.environ.copy()
         env['LC_ALL'] = 'C'
         proc = subprocess.Popen(args, stderr=subprocess.PIPE, env=env)
-        for line in proc.stderr:
-            print (line.decode("utf-8"), end="")
-            interpret_warning(line.decode("utf-8"))
-        if do_exit:
-            sys.exit(1)
+        #for line in proc.stderr:
+        #    print (line.decode("utf-8"), end="")
+        #    interpret_warning(line.decode("utf-8"))
+        #if do_exit:
+        #    sys.exit(1)
 
         result = proc.wait()
     except OSError as e:
